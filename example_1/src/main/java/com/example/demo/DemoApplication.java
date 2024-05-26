@@ -93,7 +93,7 @@ public class DemoApplication {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
-            } else {
+            } else if (array[i] > min && array[i] < max) {
                 min = array[i];
             }
         }
@@ -139,7 +139,7 @@ public class DemoApplication {
         int array[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
         System.out.println("Output số lớn thứ 2 trong mảng : " + numberMaxInArray(array));
         System.out.println("Output đếm chữ cái cần tìm cần xuất hiện trong mảng : " + countString("addsdja111", 'a'));
-        System.out.println("Output đếm tất cả chữ cái xuất hiện trong mảng : \n" + demCacPhanTuXuatHienTrongMang("adsndsadxx"));
+        System.out.println("Output đếm tất cả chữ cái xuất hiện trong mảng : \n " + demCacPhanTuXuatHienTrongMang("adsndsadxx"));
         SpringApplication.run(DemoApplication.class, args);
     }
 
