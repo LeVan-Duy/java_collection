@@ -128,6 +128,26 @@ public class DemoApplication {
         return result;
     }
 
+    //===============                    =====================================//
+    public static String timKiemCacPhanTuKhacNhauTrong2Mang(int[] array1, int[] array2) {
+        Set<Integer> integers = new HashSet<>();
+        for (int number : array1) {
+            integers.add(number);
+        }
+        for (int number2 : array2) {
+            if (integers.contains(number2)) {
+                integers.remove(number2);
+            } else {
+                integers.add(number2);
+            }
+        }
+        String result = "";
+        for (int x : integers) {
+            result = result + " " + x;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Output đảo ngược cách 1 : " + convertString1("duy"));
@@ -140,6 +160,9 @@ public class DemoApplication {
         System.out.println("Output số lớn thứ 2 trong mảng : " + numberMaxInArray(array));
         System.out.println("Output đếm chữ cái cần tìm cần xuất hiện trong mảng : " + countString("addsdja111", 'a'));
         System.out.println("Output đếm tất cả chữ cái xuất hiện trong mảng : \n " + demCacPhanTuXuatHienTrongMang("adsndsadxx"));
+        int array1[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+        int array2[] = {11, 3, 4, 12, 15};
+        System.out.println("Output tìm các phần tử không trùng nhau trong 2 mảng : \n " + timKiemCacPhanTuKhacNhauTrong2Mang(array1, array2));
         SpringApplication.run(DemoApplication.class, args);
     }
 
